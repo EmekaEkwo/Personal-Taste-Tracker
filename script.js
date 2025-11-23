@@ -22,50 +22,59 @@ for (let i = 0; i < favoriteFoods.length; i++) {
   const food = favoriteFoods[i];
   console.log("My #" + position + " favorite food is " + food);
 }
+// 4a. Create a function printFoodRecommendation(foodName) that prints:
+// "Have you ever tried ____?"
+// "I always recommend ____ to friends."
+// "Trust me — ____ is delicious."
 
-
-
-
-
-// 4a. Create a function printFoodRecommendation(foodName) that prints out the following for the foodName provided
-    // "Have you ever tried ____?"
-    // "I always recommend ____ to friends."
-    // "Trust me — ____ is delicious."
-function describeFood(foodName) {
-  console.log(foodName + " is one of my favorite foods.");
+function printFoodRecommendation(foodName) {
+  console.log("Have you ever tried " + foodName + "?");
+  console.log("I always recommend " + foodName + " to friends.");
+  console.log("Trust me — " + foodName + " is delicious.");
 }
-
-// Calling the function:
-describeFood("tacos");
-describeFood("ramen");
-
-
-
 
 // 4b. Call the function at least 3 times
-function isLongName(foodName) {
-  return foodName.length > 5;
+printFoodRecommendation("ramen");
+printFoodRecommendation("tacos");
+printFoodRecommendation("pasta");
+
+
+
+// 5. Print out only foods that have an "a" in the name.
+for (let i = 0; i < friendFavorites.length; i++) {
+  const food = friendFavorites[i];
+  if (food.toLowerCase().includes("a")) {
+    console.log(food);
+  }
 }
-
-const result = isLongName("pizza"); // false
-console.log(result);
-
-
-
-// Here's a list of 50 friends' favorite foods:
-let friendFavorites = [
-    "Pizza", "Sushi", "Pasta", "Falafel", "Burgers", "Ramen", "Pad Thai", "Curry", "Pho", "Nachos", "Gnocchi", "Donuts", "Steak", "Lasagna", "Biryani", "Tacos", "Croissant", "Churros", "Fried Rice", "Shawarma", "Miso Soup", "BBQ Ribs", "Hotpot", "Enchiladas", "Baklava", "Gyros", "Hummus", "Empanadas", "Pancakes", "Muffins", "Samosas", "Macarons", "Quiche", "Pierogi", "Arepas", "Okonomiyaki", "Ceviche", "Brisket", "Bao Buns", "Poutine", "Clam Chowder", "Fajitas", "Canelé", "Kimchi", "Tamales", "Omelette", "Biscuits", "Tempura", "Spring Rolls", "Crepes"
-  ];
-
-// 5. Print out only foods that have an "a" in the name. For example, "Pizza" would not be included, but "Pasta" would be.
 
 
 
 // 6. Store the result in an array called foodsWithA. Print out the array.
+let foodsWithA = [];
+
+for (let i = 0; i < friendFavorites.length; i++) {
+  const food = friendFavorites[i];
+  if (food.toLowerCase().includes("a")) {
+    foodsWithA.push(food);
+  }
+}
+
+console.log("Foods with 'a':", foodsWithA);
 
 
 
 // 7. Create a new array longFoodNames for foods with names longer than 6 characters.
+let longFoodNames = [];
+
+for (let i = 0; i < friendFavorites.length; i++) {
+  const food = friendFavorites[i];
+  if (food.length > 6) {
+    longFoodNames.push(food);
+  }
+}
+
+console.log("Long food names:", longFoodNames);
 
 
 
